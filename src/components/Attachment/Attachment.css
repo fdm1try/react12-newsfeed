@@ -1,0 +1,61 @@
+.attachment.attachment-unsupported {
+  font-size: 14px;
+  text-align: center;
+  padding: 1em 0;
+  color: #aaa;
+}
+
+.attachment {
+  font-size: 18px;
+}
+
+.attachment__title {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+
+}
+
+.attachment__title_link {
+  text-decoration: none;
+  color: #2674a8;
+  font-size: 1em;
+
+}
+
+.attachment__caption {
+  font-size: 0.8em;
+  color: #999;
+}
+
+.attachment-link-inline {
+  border-left: 3px solid #2674a8;
+  padding: 0.5em 1em;
+}
+
+.attachment-photo {
+  height: 300px;
+  width: 100%;
+  background-color: #aaa;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.attachment-photo__image {
+  object-fit: cover;
+  height: 100%;
+}
+
+.attachment-link-poster .attachment-photo {
+  border-radius: 5px 5px 0 0;
+}
+
+.attachment-link-poster .attachment__footer {
+  padding: 0.5em 1em;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #aaa;
+  border-top: none;
+}
