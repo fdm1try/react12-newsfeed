@@ -23,12 +23,10 @@ export const newsFeedSlice: Slice = createSlice({
     fetchFollowingNews: (state) => ({ ...state, error: null, loading: true }),
     fetchFailure: (state, action) => ({...state, error: action.payload, loading: false}),
     fetchSuccess: (state, action) => {
-      const items = action.payload;
-      if (items.length < POST_COUNT_PER_REQUEST) state.hasMoreNews = false;
-      state.items.push(...items);
-      state.lastPostID = items[items.length-1].id;
-      state.error = null;
-      state.loading = false;
+      const items = [...state.items, ...action.payload];
+      if (action.payload.length < POST_COUNT_PER_REQUEST) state.hasMoreNews = false;
+      const lastPostID = items[items.length-1].id;
+      return { ...state, items, lastPostID, error: null, loading: false };
     },
   }
 });
